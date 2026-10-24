@@ -5,7 +5,8 @@
   "main": "app.js",
   "scripts": {
     "lint": "eslint .",
-    "format": "prettier --write ."
+    "format": "prettier --write .",
+    "prepare": "husky"
   },
   "repository": {
     "type": "git",
@@ -18,5 +19,20 @@
   "bugs": {
     "url": "https://github.com/adamksX3/clean-code-todo/issues"
   },
-  "homepage": "https://github.com/adamksX3/clean-code-todo#readme"
+  "homepage": "https://github.com/adamksX3/clean-code-todo#readme",
+  "devDependencies": {
+    "@eslint/js": "^10.0.1",
+    "eslint": "^10.13.0",
+    "globals": "^17.13.0",
+    "husky": "^9.1.7",
+    "lint-staged": "^17.6.0",
+    "prettier": "^3.9.10"
+  },
+  "lint-staged": {
+    "*.{js,mjs}": [
+      "eslint",
+      "prettier --check"
+    ],
+    "*.{html,css,json,md,yml}": "prettier --check"
+  }
 }
